@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -14,6 +15,8 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 
 public class Utilities {
 	
@@ -30,36 +33,23 @@ public class Utilities {
 		XSSFSheet sheet=wb.getSheet("RegisterData");
 		
 		for (Row myrow : sheet) {
-			if(myrow.getRowNum()==1) continue;
+			if(myrow.getRowNum()==0) continue;
 			String temp = "";
 		    for (Cell mycell : myrow) {
 		    	
-		    	if(mycell.getCellType()==CellType.STRING) {
-		    		temp = temp+ mycell.getStringCellValue() +";";
+		    	try {
+		    	temp = temp+ mycell.getStringCellValue() +";";
 		    	}
-		    	else {
-		    		NumberToTextConverter.toText(mycell.getNumericCellValue());
-		    		
-		    		temp = temp+ NumberToTextConverter.toText(mycell.getNumericCellValue()) +";";
+		    	catch (IllegalStateException e)
+		    	{
+		    		temp = temp+ mycell.getNumericCellValue() +";";
 		    	}
-		    	
-//		    	try {
-//		    	temp = temp+ mycell.getStringCellValue() +";";
-//		    	}
-//		    	catch (IllegalStateException e)
-//		    	{
-//		    		temp = temp+ mycell.getNumericCellValue() +";";
-//		    	}
 		    	
 		    }
-		    //double numberIndex = myrow.getCell(8).getNumericCellValue()+1;
-	    	//myrow.getCell(8).setCellValue(numberIndex);
 		    registerData.add(cleanseData(temp));
 		    System.out.println(temp);
 		}
-		FileOutputStream outputStream = new FileOutputStream("TestData\\RegisterTestData.xlsx");
-        wb.write(outputStream);
-        wb.close();
+
 		
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
@@ -69,17 +59,14 @@ public class Utilities {
 		e.printStackTrace();
 	}
 	
-	
-	
-	
-	
-	
 	return registerData;
 	}
 	
+	
+	
+	
 	public static String cleanseData(String s)
 	{
-		
 		
 		
 		return (s == null || s.length() == 0)

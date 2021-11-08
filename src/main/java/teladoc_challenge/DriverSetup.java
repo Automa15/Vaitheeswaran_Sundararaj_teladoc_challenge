@@ -26,25 +26,29 @@ public class DriverSetup {
 	//Property file path	
 			prop = new Properties();
 			
-			 FileInputStream fis = new FileInputStream("C:\\Users\\vaith\\eclipse-workspace\\Vaitheeswaran_Sundararaj_teladoc_challenge\\src\\main\\java\\teladoc_challenge\\data.properties");
+			 FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\teladoc_challenge\\data.properties");
 			 prop.load(fis);
 			 String browserName=prop.getProperty("browser");
 			 System.out.println(browserName);
 		
+			String path = System.getProperty("user.dir");
+			String driverPathChrome = path+"\\src\\main\\java\\resources\\DriverFiles\\chromedriver.exe";
+			String driverPathFirbox = path+"\\src\\main\\java\\resources\\DriverFiles\\geckodriver.exe";
+			 
 		//select browser name based on the value from properties file 
 		switch(browserName) {
 		
 		case "chrome":
 			
-			System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", driverPathChrome);
 			driver = new ChromeDriver();
 			break;
 		case "firefox":
-			System.setProperty("webdriver.gecko.driver", "C:\\chromeDriver\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", driverPathFirbox);
 			 driver = new FirefoxDriver();
 			 break;
 		default:
-			System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", driverPathChrome);
 			driver = new ChromeDriver();
 			 break;
 		}

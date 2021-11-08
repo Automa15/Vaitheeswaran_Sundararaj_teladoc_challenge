@@ -11,6 +11,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import junit.framework.Assert;
+
 public class DeleteRecord extends DriverSetup{
 
 	public WebDriver driver;
@@ -23,6 +25,7 @@ public class DeleteRecord extends DriverSetup{
 		
 	}
 	
+
 	@Test(dataProvider = "getDeleteData")
 	public void DeleteUser(String userName) throws IOException {
 		
@@ -42,19 +45,9 @@ public class DeleteRecord extends DriverSetup{
 			
 			LandingPage landingPage = new LandingPage(driver);
 			String	uNamerNotFound = landingPage.getSpecificRow(userName);
-			a.assertEquals(uNamerNotFound, "");
-			
-			if(uNamerNotFound == "") {
-			log.info("UserName "+uNamerNotFound+ " Not found under the Table and user Successfully added");
-			}
-			
+
+			Assert.assertEquals(uNamerNotFound,"");
 			log.info("Test completed");
-			
-			
-			
-			
-			
-			a.assertAll();
 		}
 		
 		@AfterTest

@@ -1,5 +1,5 @@
-02:35:06.214 [main] INFO  teladoc_challenge.DriverSetup - Add User Test completed
-02:35:08.396 [main] INFO  teladoc_challenge.DriverSetup - Driver is initilized
-02:35:10.895 [main] INFO  teladoc_challenge.DriverSetup - Test completed
-02:35:11.222 [main] INFO  teladoc_challenge.DriverSetup - UserName  Not found under the Table and user Successfully added
-02:35:11.223 [main] INFO  teladoc_challenge.DriverSetup - Test completed
+20:14:34.907 [main] INFO  teladoc_challenge.DriverSetup - Driver is initilized
+20:14:37.362 [main] INFO  teladoc_challenge.DriverSetup - Test completed
+20:14:37.609 [main] INFO  teladoc_challenge.DriverSetup - Test completed
+20:14:37.893 [AsyncHttpClient-1-3] DEBUG io.netty.buffer.PoolThreadCache - Freed 2 thread-local buffer(s) from thread: AsyncHttpClient-1-3
+20:14:37.893 [AsyncHttpClient-1-4] DEBUG io.netty.buffer.PoolThreadCache - Freed 3 thread-local buffer(s) from thread: AsyncHttpClient-1-4

@@ -1,5 +1,6 @@
-02:35:00.993 [main] DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0xad4ee8a8ce0df7d2
-02:35:01.066 [main] INFO  teladoc_challenge.DriverSetup - Driver is initilized
-02:35:05.852 [main] INFO  teladoc_challenge.DriverSetup - Record saved successfully
-02:35:05.943 [main] INFO  teladoc_challenge.DriverSetup - UserName testUserv found under the Table and user Successfully added
-02:35:06.214 [main] INFO  teladoc_challenge.DriverSetup - UserName  Not found under the Table and user Successfully added
+20:14:25.605 [main] DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x91d189e3c7f8f010
+20:14:25.678 [main] INFO  teladoc_challenge.DriverSetup - Driver is initilized
+20:14:30.926 [main] INFO  teladoc_challenge.DriverSetup - Record saved successfully
+20:14:30.995 [main] INFO  teladoc_challenge.DriverSetup - Add User Test completed
+20:14:32.746 [main] INFO  teladoc_challenge.DriverSetup - Record saved successfully
+20:14:32.816 [main] INFO  teladoc_challenge.DriverSetup - Add User Test completed
